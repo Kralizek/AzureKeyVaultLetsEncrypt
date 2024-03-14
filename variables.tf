@@ -11,11 +11,11 @@ variable "location" {
   default = "eastus2"
 }
 
-variable "base_zone_name" {
+variable "parent_zone_name" {
   type = string
 }
 
-variable "base_zone_resource_group_name" {
+variable "parent_zone_resource_group_name" {
   type = string
 }
 
