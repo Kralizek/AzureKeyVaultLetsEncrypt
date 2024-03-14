@@ -16,7 +16,7 @@ provider "azurerm" {
 }
 
 provider "acme" {
-  alias = "staging"
+  alias      = "staging"
   server_url = "https://acme-staging-v02.api.letsencrypt.org/directory"
 }
 

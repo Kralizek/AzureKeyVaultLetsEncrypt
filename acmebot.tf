@@ -1,5 +1,5 @@
 module "keyvault_acmeboth" {
-  count = var.create_acme_both ? 1 : 0
+  count   = var.create_acme_both ? 1 : 0
   source  = "shibayan/keyvault-acmebot/azurerm"
   version = "~> 3.0"
 
@@ -17,7 +17,7 @@ module "keyvault_acmeboth" {
 }
 
 resource "azurerm_role_assignment" "acmebot" {
-  count = var.create_acme_both ? 1 : 0
+  count                = var.create_acme_both ? 1 : 0
   scope                = azurerm_key_vault.this.id
   principal_id         = one(module.keyvault_acmeboth.*.principal_id)
   role_definition_name = "Key Vault Certificates Officer"
